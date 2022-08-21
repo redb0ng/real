@@ -7,7 +7,12 @@ const userSchema = mongoose.Schema({
   },
   email: {
     type: String,
-    trim: ture,
+    trim: true,
+    unique: 1,
+  },
+  password: {
+    type: String,
+    minlength: 5,
   },
   lastname: {
     type: String,
