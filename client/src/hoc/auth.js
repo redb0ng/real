@@ -25,7 +25,7 @@ export default function (SpecificComponent, option, adminRoute = null) {
           if (adminRoute && !response.payload.isAdmin) {
             navigate("/");
           } else {
-            if (option == false) {
+            if (option === false) {
               navigate("/");
             }
           }

@@ -18,6 +18,9 @@ function LandingPage() {
       }
     });
   };
+  const clickMe = () => {
+    navigate("/qr_generator");
+  };
 
   return (
     <div
@@ -30,6 +33,7 @@ function LandingPage() {
       }}
     >
       <h2>시작 페이지</h2>
+      <button onClick={clickMe}>등록</button>
 
       <button onClick={onClickHandler}>로그아웃</button>
     </div>
