@@ -12,11 +12,20 @@ function LandingPage() {
   const onClickHandler = () => {
     axios.get(`/api/users/logout`).then((response) => {
       if (response.data.success) {
+        // props.history.push("/login")?
         navigate("/login");
       } else {
-        alert("로그아웃 실패!");
+        alert("로그아웃 하는데 실패 했습니다.");
       }
     });
+  };
+
+  const onRegisterHandler = () => {
+    navigate("/register");
+  };
+
+  const onSignHandler = () => {
+    navigate("/login");
   };
   const clickMe = () => {
     navigate("/qr_generator");
@@ -32,10 +41,12 @@ function LandingPage() {
         height: "100vh",
       }}
     >
-      <h2>시작 페이지</h2>
-      <button onClick={clickMe}>등록</button>
+      <h2>시작페이지</h2>
 
       <button onClick={onClickHandler}>로그아웃</button>
+      <button onClick={onSignHandler}>로그인</button>
+      <button onClick={clickMe}>등록</button>
+      <button onClick={onRegisterHandler}>회원가입</button>
     </div>
   );
 }

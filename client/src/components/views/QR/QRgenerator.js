@@ -26,23 +26,23 @@ function QRgenerator() {
     document.body.removeChild(downloadLink);
   };
 
-  const [imageUrl, setImageUrl] = useState(null);
-  const imgRef = useRef();
+  // const [imageUrl, setImageUrl] = useState(null);
+  // const imgRef = useRef();
 
-  const onChangeImage = () => {
-    const reader = new FileReader();
-    const file = imgRef.current.files[0];
-    console.log(file);
+  // const onChangeImage = () => {
+  //   const reader = new FileReader();
+  //   const file = imgRef.current.files[0];
+  //   console.log(file);
 
-    reader.readAsDataURL(file);
-    reader.onloadend = () => {
-      setImageUrl(reader.result);
-      console.log("이미지주소", reader.result);
-    };
-  };
-  const onClickFileBtn = (e) => {
-    imgRef.current.click();
-  };
+  //   reader.readAsDataURL(file);
+  //   reader.onloadend = () => {
+  //     setImageUrl(reader.result);
+  //     console.log("이미지주소", reader.result);
+  //   };
+  // };
+  // const onClickFileBtn = (e) => {
+  //   imgRef.current.click();
+  // };
 
   return (
     <div>
@@ -75,24 +75,24 @@ function QRgenerator() {
           type="password"
         />
       </div>
-      <img src={imageUrl ? imageUrl : "/img/profile.png"}></img>
+      {/* <img src={imageUrl ? imageUrl : "/img/profile.png"}></img>
       <input
         type="file"
         ref={imgRef}
         onChange={onChangeImage}
         style={{ display: "none" }}
-      ></input>
-      <button
+      ></input> */}
+      {/* <button
         onClick={() => {
           onClickFileBtn();
         }}
       >
         이미지 업로드
-      </button>
+      </button> */}
 
       <div>
         {qr ? (
-          <QRcode id="myqr" value={qr + qr2} size={0} includeMargin={true} />
+          <QRcode id="myqr" value={qr + qr2} size={300} includeMargin={true} />
         ) : (
           <p>No QR code preview</p>
         )}

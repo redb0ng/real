@@ -4,7 +4,10 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { loginUser } from "../../../_actions/user_action";
 //import { withRouter } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { Button, Checkbox, Form, Input, Badge } from "antd";
+import "antd/dist/antd.min.css";
+import "../LoginPage/LoginPage.css";
 
 function LoginPage() {
   const dispatch = useDispatch();
@@ -50,18 +53,61 @@ function LoginPage() {
         alignItems: "center",
         width: "100%",
         height: "100vh",
+        backgroundImage: "url(img/gh.jpg) ",
+        backgroundSize: "cover",
       }}
     >
       <form
         style={{ display: "flex", flexDirection: "column" }}
         onSubmit={onSubmitHandler}
       >
-        <label>Email</label>
-        <input type="email" value={Email} onChange={onEmailHandler} />
-        <label>Password</label>
-        <input type="password" value={Password} onChange={onPasswordHandler} />
+        <div className="Logo">
+          {/* <FontAwesomeIcon icon={faHeart} /> */} Welcome
+          <hr />
+        </div>
+        {/* <div><img alt="iPhone_01" src="img/e.jpg" alignItems= 'center'   height="400px"  width="500px"/></div> */}
         <br />
-        <button type="submit">Login</button>
+        <br />
+        <label className="label"> Email</label>
+        <Input
+          className="input_box"
+          placeholder="user@naver.com"
+          type="email"
+          value={Email}
+          onChange={onEmailHandler}
+        ></Input>
+        {/* <input className='input_box' type="email" value={Email} onChange={onEmailHandler}   /> */}
+        <label className="label">Password</label>
+        <input
+          className="input_box"
+          type="password"
+          value={Password}
+          onChange={onPasswordHandler}
+        />
+        <br />
+        {/* <button id= 'button' className='input_box' type="submit">
+              Login
+          </button> */}
+        <Button id="button" className="input_box" htmlType="submit">
+          Login
+        </Button>
+        <br />
+        <br />
+        <Link className="link" to="/register">
+          Register
+        </Link>
+        <Link className="link" to="/">
+          Home
+        </Link>
+        {/* <Input className='input_box' placeholder='user@naver.com' type="email"></Input> */}
+        {/* <Input placeholder="default size" FontAwesomeIcon={<faHeart/>} /> */}
+        {/* <FontAwesomeIcon className="heart" icon={faHeart} /> */}
+
+        {/* <input className="Input" type="email" icon={faHeart}   value={Email} onChange={onEmailHandler}    /> */}
+        {/* <p>
+    <FontAwesomeIcon icon={ faClover} /> 
+    <input type="email"   value={Email} onChange={onEmailHandler}    />
+    </p> */}
       </form>
     </div>
   );

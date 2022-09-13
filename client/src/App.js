@@ -19,7 +19,7 @@ function App() {
             <Route path="/login" element={Auth(LoginPage, false)} />
             <Route path="/register" element={Auth(RegisterPage, false)} />
             <Route path="/qr_generator" element={Auth(QRgen, true)} />
-            <Route path="/qr_scanner" element={Auth(QRscanner, false)} />
+            <Route path="/qr_scanner" element={Auth(QRscanner, true)} />
           </Routes>
         </Router>
       </div>
