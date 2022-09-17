@@ -35,8 +35,8 @@ function RegisterPage() {
   const onSubmitHandler = (event) => {
     event.preventDefault();
 
-    console.log("Email", Email);
-    console.log("Password", Password);
+    // console.log("Email", Email);
+    // console.log("Password", Password);
 
     if (Password !== ConfirmPassword) {
       return alert("비밀번호와 비밀번호 확인은 같아야 합니다.");

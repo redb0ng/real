@@ -4,6 +4,8 @@ import { ArrowBack, GetApp } from "@material-ui/icons";
 import { Link } from "react-router-dom";
 import QRcode from "qrcode.react";
 
+// 주소, 나이 추가하기
+
 function QRgenerator() {
   const [qr, setQr] = useState("이름");
   const handleChange = (event) => {

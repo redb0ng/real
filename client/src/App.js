@@ -7,7 +7,9 @@ import LoginPage from "./components/views/LoginPage/LoginPage";
 import RegisterPage from "./components/views/RegisterPage/RegisterPage";
 import QRgen from "./components/views/QR/QRgenerator";
 import QRscanner from "./components/views/QR/QRscanner";
+import IdCard from "./components/views/IdCard/IdCard";
 import Auth from "./hoc/auth";
+import { TramOutlined } from "@material-ui/icons";
 
 function App() {
   return (
@@ -19,7 +21,8 @@ function App() {
             <Route path="/login" element={Auth(LoginPage, false)} />
             <Route path="/register" element={Auth(RegisterPage, false)} />
             <Route path="/qr_generator" element={Auth(QRgen, true)} />
-            <Route path="/qr_scanner" element={Auth(QRscanner, true)} />
+            <Route path="/qr_scanner" element={Auth(QRscanner, true, true)} />
+            <Route path="/idcard" element={Auth(IdCard, true)} />
           </Routes>
         </Router>
       </div>

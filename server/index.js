@@ -7,7 +7,7 @@ const config = require("./config/key");
 const { auth } = require("./middleware/auth");
 
 const { User } = require("./models/User");
-
+const { User3 } = require("./models/User2");
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(bodyParser.json());
@@ -19,12 +19,23 @@ mongoose
   .then(() => console.log("MongoDB Connected...."))
   .catch((err) => console.log(err));
 
-app.get("/", (req, res) => {
-  res.send("Hello World!!!!");
-});
+// app.get("/", (req, res) => {
+//   res.send("Hello World!!!!");
+// });
 
-app.get("/api/hello", (req, res) => {
-  res.send("안녕하세요~~");
+// app.get("/api/hello", (req, res) => {
+//   res.send("안녕하세요~~");
+// });
+
+app.post("/api/users/idcard", (req, res) => {
+  const user3 = new User3(req.body);
+
+  user3.save((err, user3Info) => {
+    if (err) return res.json({ success: false, err });
+    return res.status(200).json({
+      success: true,
+    });
+  });
 });
 
 app.post("/api/users/register", (req, res) => {
