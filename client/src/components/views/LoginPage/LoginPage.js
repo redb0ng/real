@@ -3,13 +3,25 @@ import { useState } from "react";
 // import Axios from 'axios';
 import { useDispatch } from "react-redux";
 import { loginUser } from "../../../_actions/user_action";
-//import { withRouter } from "react-router-dom";
+import Auth from "../../../hoc/auth";
 import { Link, useNavigate } from "react-router-dom";
 import { Button, Checkbox, Form, Input, Badge } from "antd";
 import "antd/dist/antd.min.css";
-import "../LoginPage/LoginPage.css";
+// import { PlayCircleOutlined,CheckCircleOutlined  } from "@ant-design/icons";
+// import styled from "@emotion/styled";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHeart } from "@fortawesome/free-solid-svg-icons";
 
+import "../LoginPage/LoginPage.css";
 function LoginPage() {
+  // const onFinish = (values) => {
+  //     console.log('Success:', values);
+  //   };
+
+  //   const onFinishFailed = (errorInfo) => {
+  //     console.log('Failed:', errorInfo);
+  //   };
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [Email, setEmail] = useState("");
@@ -44,6 +56,8 @@ function LoginPage() {
       }
     });
   };
+
+  // backgroundColor:'#D6EAF8'
 
   return (
     <div
@@ -86,8 +100,8 @@ function LoginPage() {
         />
         <br />
         {/* <button id= 'button' className='input_box' type="submit">
-              Login
-          </button> */}
+                Login
+            </button> */}
         <Button id="button" className="input_box" htmlType="submit">
           Login
         </Button>
@@ -96,18 +110,15 @@ function LoginPage() {
         <Link className="link" to="/register">
           Register
         </Link>
-        <Link className="link" to="/">
-          Home
-        </Link>
         {/* <Input className='input_box' placeholder='user@naver.com' type="email"></Input> */}
         {/* <Input placeholder="default size" FontAwesomeIcon={<faHeart/>} /> */}
-        {/* <FontAwesomeIcon className="heart" icon={faHeart} /> */}
+        <FontAwesomeIcon className="heart" icon={faHeart} />
 
         {/* <input className="Input" type="email" icon={faHeart}   value={Email} onChange={onEmailHandler}    /> */}
         {/* <p>
-    <FontAwesomeIcon icon={ faClover} /> 
-    <input type="email"   value={Email} onChange={onEmailHandler}    />
-    </p> */}
+      <FontAwesomeIcon icon={ faClover} /> 
+      <input type="email"   value={Email} onChange={onEmailHandler}    />
+      </p> */}
       </form>
     </div>
   );

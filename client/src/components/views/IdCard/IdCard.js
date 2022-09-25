@@ -71,8 +71,9 @@ function IdCard() {
     dispatch(idUser(body)).then((response) => {
       if (response.payload.success) {
         alert("민증 등록");
+        navigate("/qr_generator");
       } else {
-        alert("Failed to sign up");
+        alert("민증 등록 실패");
       }
     });
   };
@@ -102,17 +103,19 @@ function IdCard() {
   };
 
   return (
-    <div>
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        width: "100%",
+        height: "100vh",
+        backgroundImage: "url(img/gh.jpg) ",
+        backgroundSize: "cover",
+      }}
+    >
       <form
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          width: "100%",
-          height: "100vh",
-          backgroundImage: "url(img/gh.jpg) ",
-          backgroundSize: "cover",
-        }}
+        style={{ display: "flex", flexDirection: "column" }}
         onSubmit={onSubmitHandler}
       >
         <div className="Logo">
@@ -133,28 +136,26 @@ function IdCard() {
         {/* <input className='input_box' type="email" value={Email} onChange={onEmailHandler}   /> */}
         <label className="label">주민번호</label>
         <input
-          // className="input_box"
+          className="input_box"
           type="text"
           value={Id}
           onChange={onIdHandler}
         />
-        <br />
         <label className="label">나이</label>
         <input
-          // className="input_box"
+          className="input_box"
           type="number"
           value={Age}
           onChange={onAgeHandler}
         />
-        <br />
         <label className="label">주소</label>
         <input
-          // className="input_box"
+          className="input_box"
           type="text"
           value={Address}
           onChange={onAddressHandler}
         />
-        <br />
+
         <button id="button" type="submit">
           등록
         </button>
@@ -162,13 +163,7 @@ function IdCard() {
           Login
         </Button>
         <br /> */}
-        <br />
-        <Link className="link" to="/register">
-          Register
-        </Link>
-        <Link className="link" to="/">
-          Home
-        </Link>
+
         <React.Fragment>
           <button onClick={openModal}>인증하기</button>
           <Modal open={modalOpen} close={closeModal} header="비밀번호 입력">
@@ -190,6 +185,9 @@ function IdCard() {
             </div>
           </Modal>
         </React.Fragment>
+        <Link className="link" to="/">
+          Home
+        </Link>
       </form>
     </div>
   );

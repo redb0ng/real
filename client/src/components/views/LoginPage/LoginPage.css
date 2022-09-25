@@ -1,21 +1,8 @@
-/* .Input {
-   font-size: 1rem;
-   /* border: none; */
-
-/* border-radius: 0.5rem;
-   outline: none;
-    width: 400px;
-    height: 50px;
-    padding-bottom: 0.5rem;
-    margin-bottom: 1rem;
-    color: blue; */
-/* } */
-/* [type="email"], input[type="password"] */
 .input_box {
   background-color: rgb(255, 201, 170);
   border-color: white;
   border-style: solid;
-  width: 500px;
+  width: 700px;
   height: 45px;
   border-radius: 20px 20px 20px 20px;
   color: rgb(4, 11, 49);
@@ -23,15 +10,15 @@
   padding: 0 16px;
 }
 /* #login form span {
-	background-color: #363b41;
-	border-radius: 3px 0px 0px 3px;
-	color: #606468;
-	display: block;
-	float: left;
-	height: 50px;
-	line-height: 50px;
-	text-align: center;
-	width: 50px;
+  background-color: #363b41;
+  border-radius: 3px 0px 0px 3px;
+  color: #606468;
+  display: block;
+  float: left;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  width: 50px;
 } */
 
 .Logo {
