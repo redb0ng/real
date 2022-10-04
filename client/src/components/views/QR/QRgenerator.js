@@ -142,7 +142,7 @@ function QRgenerator() {
     QRCode.toDataURL(
       url,
       {
-        width: 800,
+        width: 400,
         margin: 2,
         color: {
           dark: "#335383FF",
@@ -161,21 +161,23 @@ function QRgenerator() {
   return (
     <div className="app">
       <h1>QR Generator</h1>
-      <input
-        type="text"
-        placeholder="vc value"
-        value={url}
-        onChange={(e) => setUrl(e.target.value)}
-      />
-      <button onClick={GenerateQRCode}>Generate</button>
-      {qr && (
-        <>
-          <img src={qr} />
-          <a href={qr} download="qrcode.png">
-            Download
-          </a>
-        </>
-      )}
+      <div className="main">
+        <input
+          type="text"
+          placeholder="vc value"
+          value={url}
+          onChange={(e) => setUrl(e.target.value)}
+        />
+        <button onClick={GenerateQRCode}>Generate</button>
+        {qr && (
+          <>
+            <img src={qr} />
+            <a href={qr} download="qrcode.png">
+              Download
+            </a>
+          </>
+        )}
+      </div>
     </div>
   );
 }

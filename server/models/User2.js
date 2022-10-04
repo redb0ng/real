@@ -1,9 +1,14 @@
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 const saltRounds = 10;
+const Schema = mongoose.Schema;
 // const jwt = require("jsonwebtoken");
 
 const user3Schema = mongoose.Schema({
+  // wirter: {
+  //   type: Schema.Types.ObjectId,
+  //   ref: "User",
+  // },
   name: {
     type: String,
     maxlength: 10,
@@ -20,11 +25,7 @@ const user3Schema = mongoose.Schema({
     type: Number,
     maxlength: 5,
   },
-  //   role: {
-  //     type: Number,
-  //     default: 0,
-  //   },
-  //   image: String,
+  // image: String,
   //   token: {
   //     type: String,
   //   },

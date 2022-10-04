@@ -2,55 +2,61 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: sans-serif;
 }
 
 body {
   text-align: center;
-  background-color: #1b2034;
-  color: #1b2034;
-}
-
-img {
-  display: block;
-  width: 350px;
-  height: 350px;
-  margin: 2rem auto;
-}
-
-.app {
-  padding: 2rem;
-  display: "flex";
-  justify-content: "center";
-  align-items: "center";
+  align-items: center;
 }
 
 h1 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
+  font-weight: 700;
+  padding: 30px 0;
+  margin: 0;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
 }
 
 input {
-  appearance: none;
-  outline: none;
-  border: none;
-  background: #fff;
-  width: 100%;
-  max-width: 320px;
-  padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
-  margin-right: 1rem;
+  width: 300px;
+  height: 50px;
+  border-radius: 10px;
+  font-size: medium;
 }
 
 button,
 a {
-  appearance: none;
-  outline: none;
-  border: none;
-  background: none;
+  margin-top: 10px;
+  font-size: large;
   cursor: pointer;
+  color: rgb(6, 108, 51);
+}
 
-  color: #2bcb4b;
-  font-size: 1.5rem;
-  text-decoration: none;
+.header {
+  display: flex;
+  justify-content: center;
+}
+
+h2 {
+  font-size: 48px;
+  font-weight: 700;
+  margin: 0 0 20px;
+}
+
+#btnBack {
+  background-color: rgb(6, 108, 51);
+  display: flex;
+  padding: 30px;
+  margin: 3px 14px;
+  position: absolute;
+  left: 0;
+}
+
+#arrow {
+  width: 50px;
 } */

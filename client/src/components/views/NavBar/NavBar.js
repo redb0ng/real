@@ -1,69 +1,64 @@
-import React, { useEffect } from "react";
-import { FaBars } from "react-icons/fa";
-import {
-  Nav,
-  NavbarContainer,
-  NavLogo,
-  MobileIcon,
-  NavMenu,
-  NavItem,
-  NavLinks,
-  NavBtn,
-  NavBtnLink,
-} from "./NavBarElements";
-import { useNavigate } from "react-router-dom";
-import { Button } from "react-scroll";
-import axios from "axios";
+import React, { useState } from "react";
+import LeftMenu from "./Sections/LeftMenu";
+import RightMenu from "./Sections/RightMenu";
+import { Drawer, Button } from "antd";
+//import { Icon } from "@ant-design/icons";
+import "./Sections/Navbar.css";
+const Logo = require("../../../videos/gh.jpg");
 
-function NavBar({ toggle }) {
-  const navigate = useNavigate();
+function NavBar() {
+  const [visible, setVisible] = useState(false);
 
-  const onSignHandler = () => {
-    navigate("/login");
+  const showDrawer = () => {
+    setVisible(true);
   };
-  const clickMe = () => {
-    navigate("/qr_generator");
+
+  const onClose = () => {
+    setVisible(false);
   };
+
   return (
-    <>
-      <Nav>
-        <NavbarContainer>
-          <NavLogo to="/">최종장박봉</NavLogo>
-          <MobileIcon onClick={toggle}>
-            <FaBars />
-          </MobileIcon>
-          <NavMenu>
-            <NavItem>
-              <NavLinks to="about">About</NavLinks>
-            </NavItem>
-            <NavItem>
-              <NavLinks to="bbb">bbb</NavLinks>
-            </NavItem>
-            <NavItem>
-              <NavLinks to="ccc">ccc</NavLinks>
-            </NavItem>
-            <NavItem>
-              <NavLinks to="ddd">ddd</NavLinks>
-            </NavItem>
-          </NavMenu>
-          <NavBtn>
-            <NavBtnLink to="/login">LOGIN</NavBtnLink>
-          </NavBtn>
-        </NavbarContainer>
-        <button onClick={onSignHandler}>로그인</button>
-        <button onClick={clickMe}>등록</button>
-      </Nav>
-    </>
+    <nav
+      className="menu"
+      style={{ position: "fixed", zIndex: 1, width: "100%" }}
+    >
+      <div className="menu__logo">
+        <a href="/">
+          <img
+            src={Logo}
+            alt="Logo"
+            style={{ width: "100%", marginTop: "-5px" }}
+          />
+        </a>
+      </div>
+      <div className="menu__container">
+        <div className="menu_left">
+          <LeftMenu mode="horizontal" />
+        </div>
+        <div className="menu_rigth">
+          <RightMenu mode="horizontal" />
+        </div>
+        <Button
+          className="menu__mobile-button"
+          type="primary"
+          onClick={showDrawer}
+        >
+          {/* <Icon type="align-right" /> */}
+        </Button>
+        <Drawer
+          title="Basic Drawer"
+          placement="right"
+          className="menu_drawer"
+          closable={false}
+          onClose={onClose}
+          visible={visible}
+        >
+          <LeftMenu mode="inline" />
+          <RightMenu mode="inline" />
+        </Drawer>
+      </div>
+    </nav>
   );
 }
 
 export default NavBar;
-// import React from 'react'
-
-// const NavBar = () => {
-//   return (
-//     <div>NavBar</div>
-//   )
-// }
-
-// export default NavBar

@@ -1,12 +1,16 @@
 import React, { useState } from "react";
 import Modal from "../Modal/Modal";
 import { Button, Input } from "antd";
+import Icon from "@ant-design/icons";
 import { useDispatch } from "react-redux";
 // import { registerUser } from "../../../_actions/user_action";
 import { idUser } from "../../../_actions/user_action";
 import { Link, useNavigate } from "react-router-dom";
-import { Add } from "@material-ui/icons";
+import { Add, AllInboxSharp } from "@material-ui/icons";
 import "../IdCard/IdCard.css";
+
+import Dropzone from "react-dropzone";
+import { axios } from "axios";
 
 function IdCard() {
   const dispatch = useDispatch();
@@ -54,13 +58,6 @@ function IdCard() {
   const onSubmitHandler = (event) => {
     event.preventDefault();
 
-    // console.log("Name", Name);
-    // console.log("Id", Id);
-
-    // if (Password !== ConfirmPassword) {
-    //   return alert("비밀번호와 비밀번호 확인은 같아야 합니다.");
-    // }
-
     let body = {
       name: Name,
       id: Id,
@@ -71,36 +68,36 @@ function IdCard() {
     dispatch(idUser(body)).then((response) => {
       if (response.payload.success) {
         alert("민증 등록");
-        navigate("/qr_generator");
+        navigate("/upload");
       } else {
         alert("민증 등록 실패");
       }
     });
   };
 
-  const onSubmitHandler2 = (event) => {
-    event.preventDefault();
+  // const onSubmitHandler2 = (event) => {
+  //   event.preventDefault();
 
-    // console.log("Name", Name);
-    // console.log("Id", Id);
+  //   // console.log("Name", Name);
+  //   // console.log("Id", Id);
 
-    if (Password !== ConfirmPassword) {
-      return alert("비밀번호와 비밀번호 확인은 같아야 합니다.");
-    }
+  //   if (Password !== ConfirmPassword) {
+  //     return alert("비밀번호와 비밀번호 확인은 같아야 합니다.");
+  //   }
 
-    let body = {
-      password: Password,
-      confirmPassword: ConfirmPassword,
-    };
+  //   let body = {
+  //     password: Password,
+  //     confirmPassword: ConfirmPassword,
+  //   };
 
-    dispatch(idUser(body)).then((response) => {
-      if (response.payload.success) {
-        alert("2차 확인");
-      } else {
-        alert("2차 확인 실패");
-      }
-    });
-  };
+  //   dispatch(idUser(body)).then((response) => {
+  //     if (response.payload.success) {
+  //       alert("2차 확인");
+  //     } else {
+  //       alert("2차 확인 실패");
+  //     }
+  //   });
+  // };
 
   return (
     <div
@@ -125,6 +122,7 @@ function IdCard() {
         {/* <div><img alt="iPhone_01" src="img/e.jpg" alignItems= 'center'   height="400px"  width="500px"/></div> */}
         <br />
         <br />
+
         <label className="label"> 이름</label>
         <Input
           className="input_box"

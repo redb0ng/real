@@ -8,10 +8,13 @@ const { auth } = require("./middleware/auth");
 
 const { User } = require("./models/User");
 const { User3 } = require("./models/User2");
-app.use(bodyParser.urlencoded({ extended: true }));
 
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cookiePasrser());
+
+app.use("/api/image", require("./routes/image"));
+app.use("/uploads", express.static("uploads"));
 
 const mongoose = require("mongoose");
 mongoose
@@ -26,6 +29,9 @@ mongoose
 // app.get("/api/hello", (req, res) => {
 //   res.send("안녕하세요~~");
 // });
+
+// app.use("/api/image", require("./routes/image"));
+// app.use("/uploads", express.static("uploads"));
 
 app.post("/api/users/idcard", (req, res) => {
   const user3 = new User3(req.body);
