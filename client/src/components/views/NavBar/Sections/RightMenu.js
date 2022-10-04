@@ -35,8 +35,8 @@ function RightMenu(props) {
     return (
       <Menu mode={props.mode}>
         <Menu.Item key="create">
-          <a href="/video/upload">
-            <img src={Upload} alt="Upload" />
+          <a href="/idcard">
+            <img alt="Upload" />
           </a>
         </Menu.Item>
         <Menu.Item key="logout">

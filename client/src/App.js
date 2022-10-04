@@ -13,6 +13,7 @@ import UploadPage from "./components/views/UploadPage/UploadPage";
 // import { TramOutlined } from "@material-ui/icons";
 import NavBar from "./components/views/NavBar/NavBar";
 import test from "./components/views/test/Testa";
+import Second from "./components/views/Second/Second";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
             <Route path="/idcard" element={Auth(IdCard, true)} />
             <Route path="/upload" element={Auth(UploadPage, true)} />
             <Route path="/test" element={Auth(test, null)} />
+            <Route path="/Second" element={Auth(Second, null)} />
           </Routes>
         </Router>
       </div>
