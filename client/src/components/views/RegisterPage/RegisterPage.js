@@ -40,9 +40,6 @@ function RegisterPage() {
   const onSubmitHandler = (event) => {
     event.preventDefault();
 
-    // console.log("Email", Email);
-    // console.log("Password", Password);
-
     if (Password !== ConfirmPassword) {
       return alert("비밀번호와 비밀번호 확인은 같아야 합니다.");
     }
@@ -71,7 +68,6 @@ function RegisterPage() {
         alignItems: "center",
         width: "100%",
         height: "100vh",
-        backgroundImage: "url(img/lp.jpg) ",
         backgroundSize: "cover",
       }}
     >
@@ -79,56 +75,62 @@ function RegisterPage() {
         style={{ display: "flex", flexDirection: "column" }}
         onSubmit={onSubmitHandler}
       >
-        <div className="logo">
+        <div className="Logo">
           {/* <FontAwesomeIcon icon={faHeart} /> */} Register
-          <hr />
+          <hr className="hr" />
         </div>
-        <label className="label">Email</label>
-        <Input
-          className="input_box"
-          type="email"
-          value={Email}
-          onChange={onEmailHandler}
-        />
+        <div
+          className="form"
+          style={{ display: "flex", flexDirection: "column" }}
+          onSubmit={onSubmitHandler}
+        >
+          <label className="label">Email</label>
+          <input
+            className="input_box"
+            type="email"
+            value={Email}
+            onChange={onEmailHandler}
+          />
 
-        <label className="label">Name</label>
-        <Input
-          className="input_box"
-          type="text"
-          value={Name}
-          onChange={onNameHandler}
-        />
+          <label className="label">Name</label>
+          <input
+            className="input_box"
+            type="text"
+            value={Name}
+            onChange={onNameHandler}
+          />
 
-        <label className="label">Password</label>
-        <Input
-          className="input_box"
-          type="password"
-          value={Password}
-          onChange={onPasswordHandler}
-        />
+          <label className="label">Password</label>
+          <input
+            className="input_box"
+            type="password"
+            value={Password}
+            onChange={onPasswordHandler}
+          />
 
-        <label className="label">Confirm Password</label>
-        <Input
-          className="input_box"
-          type="password"
-          value={ConfirmPassword}
-          onChange={onConfirmPasswordHandler}
-        />
+          <label className="label">Confirm Password</label>
+          <input
+            className="input_box"
+            type="password"
+            value={ConfirmPassword}
+            onChange={onConfirmPasswordHandler}
+          />
 
-        <label className="label">Second Password</label>
-        <Input
-          className="input_box"
-          type="password"
-          value={SecondPassword}
-          onChange={onSecondPasswordHandler}
-        />
-        <br />
-        <Button id="button" className="input_box" htmlType="submit">
-          Register
-        </Button>
-        <Link className="link" to="/">
-          Home
-        </Link>
+          <label className="label">Second Password</label>
+          <input
+            className="input_box"
+            type="password"
+            value={SecondPassword}
+            onChange={onSecondPasswordHandler}
+          />
+          <br />
+          <button id="button" className="input_box" htmlType="submit">
+            Register
+          </button>
+          <Link className="link" to="/">
+            Home
+          </Link>
+        </div>
       </form>
     </div>
   );

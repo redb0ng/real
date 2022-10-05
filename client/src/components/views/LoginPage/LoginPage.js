@@ -14,14 +14,6 @@ import { faHeart } from "@fortawesome/free-solid-svg-icons";
 
 import "../LoginPage/LoginPage.css";
 function LoginPage() {
-  // const onFinish = (values) => {
-  //     console.log('Success:', values);
-  //   };
-
-  //   const onFinishFailed = (errorInfo) => {
-  //     console.log('Failed:', errorInfo);
-  //   };
-
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [Email, setEmail] = useState("");
@@ -38,8 +30,8 @@ function LoginPage() {
   const onSubmitHandler = (event) => {
     event.preventDefault();
 
-    // console.log("Email", Email);
-    // console.log("Password", Password);
+    console.log("Email", Email);
+    console.log("Password", Password);
 
     let body = {
       email: Email,
@@ -48,16 +40,12 @@ function LoginPage() {
 
     dispatch(loginUser(body)).then((response) => {
       if (response.payload.loginSuccess) {
-        //   console.log(props.history)
         navigate("/");
-        // props.history.push('/register')
       } else {
         alert("Error");
       }
     });
   };
-
-  // backgroundColor:'#D6EAF8'
 
   return (
     <div
@@ -67,7 +55,7 @@ function LoginPage() {
         alignItems: "center",
         width: "100%",
         height: "100vh",
-        backgroundImage: "url(img/gh.jpg) ",
+
         backgroundSize: "cover",
       }}
     >
@@ -77,48 +65,43 @@ function LoginPage() {
       >
         <div className="Logo">
           {/* <FontAwesomeIcon icon={faHeart} /> */} Welcome
-          <hr />
+          <hr className="hr" />
         </div>
         {/* <div><img alt="iPhone_01" src="img/e.jpg" alignItems= 'center'   height="400px"  width="500px"/></div> */}
         <br />
         <br />
-        <label className="label"> Email</label>
-        <Input
-          className="input_box"
-          placeholder="user@naver.com"
-          type="email"
-          value={Email}
-          onChange={onEmailHandler}
-        ></Input>
-        {/* <input className='input_box' type="email" value={Email} onChange={onEmailHandler}   /> */}
-        <label className="label">Password</label>
-        <input
-          className="input_box"
-          type="password"
-          value={Password}
-          onChange={onPasswordHandler}
-        />
-        <br />
-        {/* <button id= 'button' className='input_box' type="submit">
-                Login
-            </button> */}
-        <Button id="button" className="input_box" htmlType="submit">
-          Login
-        </Button>
-        <br />
-        <br />
-        <Link className="link" to="/register">
-          Register
-        </Link>
-        {/* <Input className='input_box' placeholder='user@naver.com' type="email"></Input> */}
-        {/* <Input placeholder="default size" FontAwesomeIcon={<faHeart/>} /> */}
-        <FontAwesomeIcon className="heart" icon={faHeart} />
-
-        {/* <input className="Input" type="email" icon={faHeart}   value={Email} onChange={onEmailHandler}    /> */}
-        {/* <p>
-      <FontAwesomeIcon icon={ faClover} /> 
-      <input type="email"   value={Email} onChange={onEmailHandler}    />
-      </p> */}
+        <div
+          className="form"
+          style={{ display: "flex", flexDirection: "column" }}
+          onSubmit={onSubmitHandler}
+        >
+          <label className="label"> Email</label>
+          <input
+            className="input_box"
+            placeholder="user@naver.com"
+            type="email"
+            value={Email}
+            onChange={onEmailHandler}
+          ></input>
+          {/* <input className='input_box' type="email" value={Email} onChange={onEmailHandler}   /> */}
+          <label className="label">Password</label>
+          <input
+            className="input_box"
+            type="password"
+            value={Password}
+            onChange={onPasswordHandler}
+          />
+          <br />
+          <button id="button" className="input_box" htmlType="submit">
+            Login
+          </button>
+          <br />
+          <br />
+          <Link className="link" to="/register">
+            Register
+          </Link>
+          <FontAwesomeIcon className="heart" icon={faHeart} />
+        </div>
       </form>
     </div>
   );

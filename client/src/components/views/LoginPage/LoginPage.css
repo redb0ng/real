@@ -1,5 +1,5 @@
-.input_box22 {
-  background-color: rgb(204, 250, 235);
+.input_box {
+  background-color: #c1ceec;
   border-color: white;
   border-style: solid;
   width: 500px;
@@ -15,7 +15,7 @@
   border-width: 50px;
 }
 .form {
-  background-color: rgb(113, 195, 166);
+  background-color: #aec1eb;
   opacity: 0.8;
   border-radius: 30px;
   padding-left: 30px;
@@ -35,14 +35,14 @@
   width: 50px;
 } */
 .hr {
-  border-color: #043021;
-
-  border-width: 1px;
+  border-color: #aec1eb;
+  background-color: #9eb4e2;
+  border-width: 2px;
 }
-.Logo22 {
+.Logo {
   display: "flex";
   /* color: rgb(58, 108, 180); */
-  color: rgb(42, 85, 33);
+  color: #2e4d90;
   opacity: 0.7;
   font-size: 50px;
   text-align: center;
@@ -59,17 +59,18 @@
 .link:hover {
   color: rgb(254, 197, 241);
 }
-#button11:hover {
-  background-color: rgb(168, 251, 201);
+#button:hover {
+  background-color: rgb(182, 227, 220);
+  opacity: 0.8;
   color: black;
-  border-color: rgb(168, 251, 201);
+  border-color: rgb(136, 203, 191);
 }
-#button11 {
+#button {
   font-family: "Times New Roman", Times, serif;
   font-size: 16px;
-  background-color: rgb(204, 250, 235);
+  background-color: #bddff7;
   border-color: white;
-  border-style: solid;
+  border-style: dashed;
   width: 500px;
   height: 45px;
   border-radius: 20px 20px 20px 20px;
