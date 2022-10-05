@@ -104,7 +104,7 @@ app.post("/api/users/secondpassword", (req, res) => {
         if (err) return res.status(400).send(err);
 
         res
-          .cookie("x_auth", user.token)
+          .cookie("x2_auth", user.token)
           .status(200)
           .json({ password2Success: true, userId: user._id });
       });

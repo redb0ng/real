@@ -214,49 +214,6 @@ function LandingPage() {
         }
       }
     >
-      {/* <div>네브바 위치</div> */}
-      {/* <h2>시작페이지</h2> */}
-
-      <nav id="navbar">
-        <div className="navbar__logo">
-          {/* <!-- <i class="fa-solid fa-cake-candles"></i> --> */}
-          {/* <i className="fa-solid fa-star"></i> */}
-          {/* <!--<i class="fa-solid fa-seedling"></i>--> */}
-          {/* <a href="#">CHOU</a> */}
-          {/* <Link className='link' to="/">최종장박봉</Link> */}
-          최종장박봉
-        </div>
-
-        <ul className="navbar__menu">
-          <li className="navbar__menu__item active" data-link="#home">
-            Home
-          </li>
-          <li className="navbar__menu__item" data-link="#about">
-            About
-          </li>
-
-          <li className="navbar__menu__item" data-link="#contact">
-            Contact
-          </li>
-          <li button className="navbar__menu__item" onClick={onClickHandler}>
-            로그아웃
-          </li>
-          <li button className="navbar__menu__item" onClick={onRegisterHandler}>
-            로그인
-          </li>
-          <li button className="navbar__menu__item" onClick={onSignHandler}>
-            회원가입
-          </li>
-        </ul>
-
-        <FontAwesomeIcon
-          type="button"
-          className="navbar__toggle-btn"
-          onClick={onClickDrop}
-          icon={faHeart}
-        />
-      </nav>
-
       <section id="home">
         <video auto muted autoPlay loop width="100%" height="100%">
           <source src="img/video.mp4" type="video/mp4" />

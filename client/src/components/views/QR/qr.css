@@ -1,14 +1,14 @@
-/* * {
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body {
+.textArea {
+  /* visibility: hidden; */
   text-align: center;
   align-items: center;
 }
-
 h1 {
   font-weight: 700;
   padding: 30px 0;
@@ -59,4 +59,4 @@ h2 {
 
 #arrow {
   width: 50px;
-} */
+}

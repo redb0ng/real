@@ -20,7 +20,7 @@ function App() {
     <div className="App">
       <div className="App-header">
         <Router>
-          {/* <NavBar /> */}
+          <NavBar />
 
           <Routes>
             <Route exact path="/" element={Auth(LandingPage, null)} />
